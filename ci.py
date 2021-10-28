@@ -30,7 +30,7 @@ df.sex = df.sex.eq('female').mul(1)
 
 cv = list(df.select_dtypes(include=["object"]))
 print(cv)
-df = pd.get_dummies(df, columns=cv, drop_first = True)
+df = pd.get_dummies(df, columns=cv, drop_first = False)
 print(df.head())
 
 df.corr()[['charges']].sort_values(by='charges', ascending=False)
